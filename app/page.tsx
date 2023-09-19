@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Home() {
   const [linkList, setLinkList] = useState(["https://ui.shadcn.com/"]);
   return (
-    <main className="p-24 mx-auto max-w-5xl space-y-8">
+    <main className="p-6 md:p-24 mx-auto max-w-5xl space-y-8">
       <div className="flex justify-between">
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
           Today

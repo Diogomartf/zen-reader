@@ -50,15 +50,18 @@ export function AddLinkForm({
           control={form.control}
           name="link"
           render={({ field }) => (
-            <FormItem className="col-span-10">
+            <FormItem className="col-span-12 md:col-span-10">
               <FormControl>
-                <Input placeholder="https://diogo.xyz/" {...field} />
+                <Input
+                  placeholder={`Save links for later: "https://diogo.xyz/"`}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button className="col-span-2 mt-1" type="submit">
+        <Button className="col-span-12 md:col-span-2 mt-1" type="submit">
           Save for later
         </Button>
       </form>
