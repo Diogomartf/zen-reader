@@ -1,6 +1,7 @@
 "use client";
 
 import { AddLinkForm } from "@/components/addLinkForm/addLinkForm";
+import { Clock } from "@/components/clock/Clock";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,9 +9,12 @@ export default function Home() {
   const [linkList, setLinkList] = useState(["https://ui.shadcn.com/themes"]);
   return (
     <main className="p-24 mx-auto max-w-5xl space-y-8">
-      <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
-        Today
-      </h1>
+      <div className="flex justify-between">
+        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
+          Today
+        </h1>
+        <Clock />
+      </div>
       <section className="">
         <AddLinkForm linkList={linkList} setLinkList={setLinkList} />
       </section>
