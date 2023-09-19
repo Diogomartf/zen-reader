@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [linkList, setLinkList] = useState(["https://ui.shadcn.com/themes"]);
+  const [linkList, setLinkList] = useState(["https://ui.shadcn.com/"]);
   return (
     <main className="p-24 mx-auto max-w-5xl space-y-8">
       <div className="flex justify-between">
@@ -22,11 +22,18 @@ export default function Home() {
         <div className="rounded-xl border bg-card text-card-foreground shadow mt-12 p-4 space-y-4">
           <h3 className="font-semibold">Zen</h3>
           <div className="space-y-4">
-            {linkList.map(link => (
-              <div key={link} className="border-b last:border-0 pb-3 last:pb-0">
-                <SavedLinkRow link={link} />
-              </div>
-            ))}
+            {linkList.length > 0 ? (
+              linkList.map(link => (
+                <div
+                  key={link}
+                  className="border-b last:border-0 pb-3 last:pb-0"
+                >
+                  <SavedLinkRow link={link} />
+                </div>
+              ))
+            ) : (
+              <p className="text-center text-slate-600">No urls added</p>
+            )}
           </div>
         </div>
       </section>
